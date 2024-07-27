@@ -1,0 +1,22 @@
+https://nodejs.org/en/download/prebuilt-installer
+enter enter otvori sa povershell
+
+2 zalozime si novy folder 
+3 cmd: npx create-react-app todolist
+4 cmd: cd todolist    // vstupime do folderu.
+5 cmd: code .     // otvorime vo visualstudiocode. 
+
+Spustenie vo VSC:
+1 click terminal
+2 START v terminali:  npm start + enter
+3 STOP v terminali:  ctrl +c +y
+
+
+npm install bootstrap
+npm install axios
+npm install --save-dev css-loader 
+
+dellete file  reportWebVitals.js
+dellete file  setupTests.js 
+
+Open Index.js
