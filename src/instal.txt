@@ -19,4 +19,25 @@ npm install --save-dev css-loader
 dellete file  reportWebVitals.js
 dellete file  setupTests.js 
 
-Open Index.js
+
+Clearing page:
+Open Index.js   : rename header of page
+
+Open App.js and dell everything in function 
+function App() {
+  return (<>   </>
+  );
+}
+
+Navbar creating: 
+Install VSC Extention: // to create function later in Navbar.js :
+ES7 react/redux/gr..
+
+in Navbar.js start writing rfce and click reactFuncionalExportComponent.
+
+
+
+npm install --save react-router-dom
+npm install react-router-dom
+ 
+ import { Link } from 'react-router-dom';
