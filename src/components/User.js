@@ -15,8 +15,6 @@ function deleteUser(id){
     }
 }
 
-
-
 export default class User extends React.Component{
 
     // constructor(props)  standarne sa do neho ukladaju argumenty.
@@ -30,6 +28,7 @@ export default class User extends React.Component{
         
         .then(res => {
             const users = res.data;
+            // console.log('Fetched users:', users); 
             this.setState( {users});
         })
         .catch(error => {
@@ -37,9 +36,6 @@ export default class User extends React.Component{
             this.setState({ error: 'There was an error fetching the users' });
         });
     }
-
-
-   
 
     render (){
         const {  error, users } = this.state;
@@ -52,7 +48,7 @@ export default class User extends React.Component{
                             <div className='card'>
                                 <div className='card-body'>
                                     <h4 className='text-center'> Users List</h4>
-                                        <table className='table-responsive'>
+                                        <div className='table-responsive'>
                                             <table className='table table-triped'>
                                                 <thead>
                                                     <tr>
@@ -69,8 +65,8 @@ export default class User extends React.Component{
                                                 </thead>
                                                 {users.map(user => (
                                                     <tbody>
-                                                        <tr key={user.id}>    {/* kluc ktory sa hlada v poli */}
-                                                            <th scope='row'><Link to={`/user/${user.id}`}>{user.id}</Link> </th>  {/* tu pozor na spetny apostrof `` */}
+                                                        <tr key={user.id}>{/* kluc ktory sa hlada v poli */}
+                                                            <th scope='row'><Link to={`/user/${user.id}`}>{user.id}</Link></th>{/* tu pozor na spetny apostrof `` */}
                                                                 <td>{user.nickname}</td>
                                                                 <td>{user.name}</td>
                                                                 <td>{user.surkname}</td>
@@ -78,33 +74,23 @@ export default class User extends React.Component{
                                                                 <td>{user.age}</td>
                                                                 <td>{user.password}</td>
                                                                 <td>
-                                                                    <Link to={`user/${user.id}/usertasks`}><i className='btn btn-sm btn-success' >Tasks<i class="far fa-edit ml-1"></i></i></Link>
-                                                                    <Link to={`user/${user.id}/edit`}><i className='btn btn-sm btn-primary' >Edit user<i class="far fa-edit ml-1"></i></i></Link>
-                                                                    <i onClick={()=>deleteUser(user.id)} className='btn btn-sm btn-danger'>Delete user<i class="far fa-edit ml-1"></i></i>
+                                                                    <Link key='usertasks' to={`user/${user.id}/usertasks`}><i className='btn btn-sm btn-success'>Tasks<i className="far fa-edit ml-1"></i></i></Link>
+                                                                    <Link key='edit' to={`user/${user.id}/edit`}><i className='btn btn-sm btn-primary'>Edit user<i className="far fa-edit ml-1"></i></i></Link>
+                                                                    <i key='delete' onClick={()=>deleteUser(user.id)} className='btn btn-sm btn-danger'>Delete user<i className="far fa-edit ml-1"></i></i>
                                                                 </td>
                                                         </tr>
                                                     </tbody>
-                                                    
                                                     ))}
-
                                              </table>
                                              <div className='col-3 text-left'>
-                                                <Link to={`user/create`}><i className='btn btn-sm btn-primary' >Create new user<i class="far fa-edit ml-1"></i></i></Link>
+                                                <Link to={`user/create`}><i className='btn btn-sm btn-primary'>Create new user<i className="far fa-edit ml-1"></i></i></Link>
                                              </div>
-
-
-
-                                        </table>
-                                        
-                                    
+                                        </div>
                                 </div>
-                                
                             </div>
                         </div>
                     </div>
                 </div>
-
-
             </>
         )
     }
