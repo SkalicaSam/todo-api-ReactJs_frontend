@@ -60,7 +60,6 @@ export default class User extends React.Component{
                                                         <th scope='col'><strong>Age</strong></th>
                                                         <th scope='col'><strong>Password</strong></th>
                                                         <th scope='col'></th>
-
                                                     </tr>
                                                 </thead>
                                                 {users.map(user => (
@@ -69,7 +68,7 @@ export default class User extends React.Component{
                                                             <th scope='row'><Link to={`/user/${user.id}`}>{user.id}</Link></th>{/* tu pozor na spetny apostrof `` */}
                                                                 <td>{user.nickname}</td>
                                                                 <td>{user.name}</td>
-                                                                <td>{user.surkname}</td>
+                                                                <td>{user.surname}</td>
                                                                 <td>{user.email}</td>
                                                                 <td>{user.age}</td>
                                                                 <td>{user.password}</td>

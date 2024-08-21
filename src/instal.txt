@@ -41,3 +41,18 @@ npm install --save react-router-dom
 npm install react-router-dom
  
  import { Link } from 'react-router-dom';
+
+
+ http://localhost:3000/#/users
+
+
+ alt control +l zarovnanie riadkov
+
+
+ GIT cmd:
+
+Ukladanie:
+git status
+git add .
+git commit -m "Popis vašich změn"  
+git push origin main
